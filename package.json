@@ -17,7 +17,8 @@
   "scripts": {
     "build": "echo 'TODO'",
     "test": "echo 'TODO'",
-    "test:watch": "echo 'TODO'"
+    "test:watch": "echo 'TODO'",
+    "changelog": "standard-changelog"
   },
   "repository": "git@github.com:dual-lab/meta-commander.git",
   "devDependencies": {
