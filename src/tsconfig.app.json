@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "strictNullChecks": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "",
+    "rootDirs": [
+      "."
+    ],
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "./**/*.ts"
+  ]
+}

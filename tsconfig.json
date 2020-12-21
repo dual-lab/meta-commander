@@ -1,30 +1,32 @@
 {
-    "compileOnSave": false,
-    "compilerOptions": {
-        "declaration": true,
-        "module": "commonjs",
-        "target": "esnext",
-        "moduleResolution": "node",
-        "noEmitOnError": true,
-        "noImplicitAny": true,
-        "noImplicitThis": true,
-        "outDir": "./dist",
-        "rootDir": ".",
-        "strictNullChecks": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "lib": [
-            "esnext"
-        ],
-        "baseUrl": "",
-        "rootDirs": [
-            "."
-        ],
-        "types": [
-            "node"
-        ]
-    },
-    "include": [
-        "src/**/*.ts"
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "strictNullChecks": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "esnext"
+    ],
+    "baseUrl": "",
+    "rootDirs": [
+      "."
+    ],
+    "types": [
+      "node",
+      "reflect-metadata"
     ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "proposal/**/*.ts"
+  ]
 }
