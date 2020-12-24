@@ -7,24 +7,7 @@
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
 > 
 
-Create and retrive the commander instance. This instance is built using the configuration defined into the meta decorators (<!-- -->@<!-- -->MetaCommand, @<!-- -->MetaOption ...). Before use this decorators you need to import into yuor main files reflect-metadata npm module.
-
-Example:
-
-```typescript
-import 'reflect-metadata';
-import {CommandMeta, OptionMeta, program} from '../src/mod';
-
-
-\@CommandMeta('1.0.0')
-class Proposal1 {
-  @OptionMeta({})
-  debug?: boolean;
-}
-
-program(Proposal1).parseAsync(process.argv);
-
-```
+Create and retrive the commander instance.
 
 <b>Signature:</b>
 
@@ -36,11 +19,11 @@ export declare function program(metaIstance: Ctor<any>): Command;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  metaIstance | [Ctor](./meta-commander.ctor.md)<!-- -->&lt;any&gt; | constructor function |
+|  metaIstance | [Ctor](./meta-commander.ctor.md)<!-- -->&lt;any&gt; | Constructor function |
 
 <b>Returns:</b>
 
 Command
 
-Command commander instance
+Commander instance
 

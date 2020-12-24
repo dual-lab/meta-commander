@@ -7,7 +7,7 @@
   },
   "kind": "Package",
   "canonicalReference": "@dual-lab/meta-commander!",
-  "docComment": "",
+  "docComment": "/**\n * A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (\\@MetaCommand, \\@MetaOption ...).\n *\n * @remarks\n *\n * Before use this decorators you need to import into yuor main files reflect-metadata npm module.\n *\n * @example\n * ```typescript\n * import 'reflect-metadata';\n * import {CommandMeta, OptionMeta, program} from '../src/mod';\n *\n *\n * @CommandMeta('1.0.0')\n * class Proposal1 {\n *   @OptionMeta({})\n *   debug?: boolean;\n * }\n *\n * program(Proposal1).parseAsync(process.argv);\n * ```\n *\n * @packageDocumentation\n */\n",
   "name": "@dual-lab/meta-commander",
   "members": [
     {
@@ -168,7 +168,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!program:function(1)",
-          "docComment": "/**\n * Create and retrive the commander instance. This instance is built using the configuration defined into the meta decorators (\\@MetaCommand, \\@MetaOption ...). Before use this decorators you need to import into yuor main files reflect-metadata npm module.\n *\n * Example:\n * ```typescript\n * import 'reflect-metadata';\n * import {CommandMeta, OptionMeta, program} from '../src/mod';\n *\n *\n * \\@CommandMeta('1.0.0')\n * class Proposal1 {\n *   @OptionMeta({})\n *   debug?: boolean;\n * }\n *\n * program(Proposal1).parseAsync(process.argv);\n * ```\n *\n * @param metaIstance - constructor function\n *\n * @returns Command commander instance\n *\n * @beta\n */\n",
+          "docComment": "/**\n * Create and retrive the commander instance.\n *\n * @param metaIstance - Constructor function\n *\n * @returns Commander instance\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

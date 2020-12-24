@@ -4,19 +4,21 @@
 
 ## meta-commander package
 
-## Functions
+A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (<!-- -->@<!-- -->MetaCommand, @<!-- -->MetaOption ...).
 
-|  Function | Description |
-|  --- | --- |
-|  [CommandMeta(version)](./meta-commander.commandmeta.md) | <b><i>(BETA)</i></b> |
-|  [OptionMeta(config)](./meta-commander.optionmeta.md) | <b><i>(BETA)</i></b> |
-|  [program(metaIstance)](./meta-commander.program.md) | <b><i>(BETA)</i></b> Create and retrive the commander instance. This instance is built using the configuration defined into the meta decorators (<!-- -->@<!-- -->MetaCommand, @<!-- -->MetaOption ...). Before use this decorators you need to import into yuor main files reflect-metadata npm module.<!-- -->Example:
+## Remarks
+
+Before use this decorators you need to import into yuor main files reflect-metadata npm module.
+
+## Example
+
+
 ```typescript
 import 'reflect-metadata';
 import {CommandMeta, OptionMeta, program} from '../src/mod';
 
 
-\@CommandMeta('1.0.0')
+@CommandMeta('1.0.0')
 class Proposal1 {
   @OptionMeta({})
   debug?: boolean;
@@ -25,7 +27,14 @@ class Proposal1 {
 program(Proposal1).parseAsync(process.argv);
 
 ```
- |
+
+## Functions
+
+|  Function | Description |
+|  --- | --- |
+|  [CommandMeta(version)](./meta-commander.commandmeta.md) | <b><i>(BETA)</i></b> |
+|  [OptionMeta(config)](./meta-commander.optionmeta.md) | <b><i>(BETA)</i></b> |
+|  [program(metaIstance)](./meta-commander.program.md) | <b><i>(BETA)</i></b> Create and retrive the commander instance. |
 
 ## Type Aliases
 

@@ -19,6 +19,4 @@ export function OptionMeta(config: any): (proto: any, key: any) => void;
 export function program(metaIstance: Ctor<any>): Command;
 
 
-// (No @packageDocumentation comment for this package)
-
 ```
