@@ -9,8 +9,13 @@ export function CommandMeta<T extends Ctor<{}>>(version: string) {
   const __program = new Command();
   __program.version(version);
   return function (ctor: T): T {
-    //TODO read all metadata configurated on ctor.proto.
-    //TODO build the main commander
+    // Collect all option from meta data.
+    (__internal__.getOptionMetaOnce(ctor.prototype) ?? [])
+      .forEach(([flags, desc, processor, value]) => __program.option(flags, desc, processor, value));
+    
+    //TODO Collect sub command
+    //TODO? Collect sub arguments
+    
     __internal__.setCommandMeta(ctor.prototype, __program as Command);
     return ctor;
   }

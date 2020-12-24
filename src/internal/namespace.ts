@@ -1,2 +1,4 @@
 export {hasCommandMeta, getCommandMetaOnce, setCommandMeta} from './command';
-export {hasOptionMeta} from './options';
+export {hasOptionMeta, getOptionMetaOnce, setOptionMeta, getOptionMeta} from './options';
+export type {CommanderOptionArgs} from './options';
+export {getMetaType, getMetaParamTypes, getMetaReturnType} from './types';

@@ -32,7 +32,7 @@ import {__internal__} from "./internal";
 import {Ctor} from "./util/types";
 
 export {CommandMeta} from "./meta/command";
-export {OptionMeta} from "./meta/options";
+export {OptionMeta, OptionConfig} from "./meta/options";
 export {Ctor} from "./util/types";
 
 /**
@@ -41,7 +41,7 @@ export {Ctor} from "./util/types";
  * @returns Commander instance
  * @beta
  */
-export function program(metaIstance: Ctor<any>): Command {
+export function program<T>(metaIstance: Ctor<T>): Command & T {
   {new metaIstance();}
   return __internal__.getCommandMetaOnce(metaIstance.prototype);
 }

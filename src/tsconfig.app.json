@@ -7,7 +7,9 @@
     "baseUrl": "",
     "rootDirs": [
       "."
-    ]
+    ],
+    "declaration": true,
+    "declarationMap": true
   },
   "include": [
     "./**/*.ts"

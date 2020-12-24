@@ -6,6 +6,12 @@ import {CommandMeta, OptionMeta, program} from '../src/mod';
 class Proposal1 {
   @OptionMeta({})
   debug?: boolean;
+  @OptionMeta({})
+  debugs?: string[];
+  @OptionMeta({})
+  debuged?(pippo: number, ciao: string): boolean {
+    return false;
+  }
 }
 
 program(Proposal1).parseAsync(process.argv);

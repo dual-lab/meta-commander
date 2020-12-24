@@ -17,8 +17,7 @@ export function setCommandMeta(target: any, command: Command) {
 /**
  * @internal
  */
-export function getCommandMetaOnce(target: any): Command {
-  console.info(typeof target, target);
+export function getCommandMetaOnce(target: any) {
   if (!hasCommandMeta(target)) {
     throw new Error(`Command metadata not found on  target. Use @MetaCommand decorator
       on the current target.`);

@@ -18,6 +18,7 @@
   "scripts": {
     "build": "tsc -p src/tsconfig.app.json",
     "build:esm": "tsc -p src/tsconfig.app-esm.json",
+    "build:proposal": "tsc -p tsconfig.json",
     "test": "echo 'TODO'",
     "test:watch": "echo 'TODO'",
     "changelog": "standard-changelog",
