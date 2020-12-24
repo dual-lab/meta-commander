@@ -1,0 +1,220 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.12.1",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
+  },
+  "kind": "Package",
+  "canonicalReference": "@dual-lab/meta-commander!",
+  "docComment": "",
+  "name": "@dual-lab/meta-commander",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@dual-lab/meta-commander!",
+      "name": "",
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "@dual-lab/meta-commander!CommandMeta:function(1)",
+          "docComment": "/**\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function CommandMeta<T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Ctor",
+              "canonicalReference": "@dual-lab/meta-commander!Ctor:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{}>"
+            },
+            {
+              "kind": "Content",
+              "text": ">(version: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "(ctor: T) => T"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "version",
+              "parameterTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              }
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "CommandMeta"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@dual-lab/meta-commander!Ctor:type",
+          "docComment": "/**\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type Ctor<T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "new (...args: any[]) => T"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "Ctor",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@dual-lab/meta-commander!OptionMeta:function(1)",
+          "docComment": "/**\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function OptionMeta(config: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "(proto: any, key: any) => void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "config",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "name": "OptionMeta"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@dual-lab/meta-commander!program:function(1)",
+          "docComment": "/**\n * Create and retrive the commander instance. This instance is built using the configuration defined into the meta decorators (\\@MetaCommand, \\@MetaOption ...). Before use this decorators you need to import into yuor main files reflect-metadata npm module.\n *\n * Example:\n * ```typescript\n * import 'reflect-metadata';\n * import {CommandMeta, OptionMeta, program} from '../src/mod';\n *\n *\n * \\@CommandMeta('1.0.0')\n * class Proposal1 {\n *   @OptionMeta({})\n *   debug?: boolean;\n * }\n *\n * program(Proposal1).parseAsync(process.argv);\n * ```\n *\n * @param metaIstance - constructor function\n *\n * @returns Command commander instance\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function program(metaIstance: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Ctor",
+              "canonicalReference": "@dual-lab/meta-commander!Ctor:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<any>"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Command",
+              "canonicalReference": "commander!~commander.CommanderStatic#Command:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 4,
+            "endIndex": 5
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "metaIstance",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            }
+          ],
+          "name": "program"
+        }
+      ]
+    }
+  ]
+}
