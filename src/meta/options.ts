@@ -1,3 +1,6 @@
+/**
+ * @beta
+ */
 export function OptionMeta(config: any) {
   //TODO prepare commander options instance
   return function (proto: any, key: any) {

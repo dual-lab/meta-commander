@@ -2,6 +2,9 @@ import {Command} from "commander";
 import {__internal__} from "../internal";
 import type {Ctor} from "../util/types";
 
+/**
+ * @beta
+ */
 export function CommandMeta<T extends Ctor<{}>>(version: string) {
   const __program = new Command();
   __program.version(version);
