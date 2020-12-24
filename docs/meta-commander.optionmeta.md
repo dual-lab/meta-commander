@@ -11,14 +11,14 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function OptionMeta(config: any): (proto: any, key: any) => void;
+export declare function OptionMeta(config: OptionConfig): (proto: any, key: any) => void;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  config | any |  |
+|  config | [OptionConfig](./meta-commander.optionconfig.md) |  |
 
 <b>Returns:</b>
 

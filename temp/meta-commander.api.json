@@ -123,6 +123,178 @@
           }
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "@dual-lab/meta-commander!OptionConfig:interface",
+          "docComment": "/**\n * Meta option decorator configuration object.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface OptionConfig "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "OptionConfig",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!OptionConfig#description:member",
+              "docComment": "/**\n * Description of the option will be priinted into the help message\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "description?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "description",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!OptionConfig#longName:member",
+              "docComment": "/**\n * The long option name. If camel case it will be trasformed into kebabe case. If not specified it will be inferred from the name of the field or method. To suppress long name put equal to `false`.\n *\n * @remarks\n *\n * Can be suppressed only if the `shortName` is not\n *\n * @example\n * ```typescript\n *\n * @MetaCommand\n * class MyCli {\n *  @MetaOption({\n *    shortName: 'd'\n *    longName: 'debugEnabled'\n *  })\n *  debug?: boolean;\n * }\n *\n * ```\n *\n * @example\n * ```bash\n * my-cli --debug-enabled\n *\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "longName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "longName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!OptionConfig#processing:member",
+              "docComment": "/**\n * The preceseing opton args' function. see [https://github.com/tj/commander.js#custom-option-processing](Custom option processing)\n *\n * @remarks\n *\n * If the {@link OptionMeta | \\@OptionMeta} is used on a method. That method will be the processing function.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "processing?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(dummyValue: string, previusValue?: string) => any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "processing",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!OptionConfig#required:member",
+              "docComment": "/**\n * The option is required. Default is not.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "required?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "required",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!OptionConfig#shortName:member",
+              "docComment": "/**\n * The short option character. if not specified it will be inferred from the first letter of field or method name. To suppress short name put equal to `false`\n *\n * @remarks\n *\n * Can be suppressed only if the `longName` is not.\n *\n * @example\n * ```typescript\n *\n * @MetaCommand\n * class MyCli {\n *  @MetaOption({\n *    shortName: 'd'\n *  })\n *  debug?: boolean;\n * }\n *\n * ```\n *\n * @example\n * ```bash\n * my-cli -d\n *\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shortName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "shortName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!OptionConfig#wtihValue:member",
+              "docComment": "/**\n * Configuration for option that take a value.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "wtihValue?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        defaultValue?: any;\n        descName?: string;\n        optional?: boolean;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "wtihValue",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!OptionMeta:function(1)",
           "docComment": "/**\n * @beta\n */\n",
@@ -132,8 +304,9 @@
               "text": "export declare function OptionMeta(config: "
             },
             {
-              "kind": "Content",
-              "text": "any"
+              "kind": "Reference",
+              "text": "OptionConfig",
+              "canonicalReference": "@dual-lab/meta-commander!OptionConfig:interface"
             },
             {
               "kind": "Content",
@@ -172,7 +345,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare function program(metaIstance: "
+              "text": "export declare function program<T>(metaIstance: "
             },
             {
               "kind": "Reference",
@@ -181,7 +354,7 @@
             },
             {
               "kind": "Content",
-              "text": "<any>"
+              "text": "<T>"
             },
             {
               "kind": "Content",
@@ -194,12 +367,16 @@
             },
             {
               "kind": "Content",
+              "text": " & T"
+            },
+            {
+              "kind": "Content",
               "text": ";"
             }
           ],
           "returnTypeTokenRange": {
             "startIndex": 4,
-            "endIndex": 5
+            "endIndex": 6
           },
           "releaseTag": "Beta",
           "overloadIndex": 1,
@@ -209,6 +386,19 @@
               "parameterTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
+              }
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
               }
             }
           ],

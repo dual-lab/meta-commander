@@ -36,6 +36,12 @@ program(Proposal1).parseAsync(process.argv);
 |  [OptionMeta(config)](./meta-commander.optionmeta.md) | <b><i>(BETA)</i></b> |
 |  [program(metaIstance)](./meta-commander.program.md) | <b><i>(BETA)</i></b> Create and retrive the commander instance. |
 
+## Interfaces
+
+|  Interface | Description |
+|  --- | --- |
+|  [OptionConfig](./meta-commander.optionconfig.md) | <b><i>(BETA)</i></b> Meta option decorator configuration object. |
+
 ## Type Aliases
 
 |  Type Alias | Description |

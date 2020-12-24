@@ -12,11 +12,25 @@ export function CommandMeta<T extends Ctor<{}>>(version: string): (ctor: T) => T
 // @beta (undocumented)
 export type Ctor<T> = new (...args: any[]) => T;
 
+// @beta
+export interface OptionConfig {
+    description?: string;
+    longName?: string;
+    processing?: (dummyValue: string, previusValue?: string) => any;
+    required?: boolean;
+    shortName?: string;
+    wtihValue?: {
+        defaultValue?: any;
+        descName?: string;
+        optional?: boolean;
+    };
+}
+
 // @beta (undocumented)
-export function OptionMeta(config: any): (proto: any, key: any) => void;
+export function OptionMeta(config: OptionConfig): (proto: any, key: any) => void;
 
 // @beta
-export function program(metaIstance: Ctor<any>): Command;
+export function program<T>(metaIstance: Ctor<T>): Command & T;
 
 
 ```

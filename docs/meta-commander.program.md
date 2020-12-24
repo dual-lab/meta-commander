@@ -12,18 +12,18 @@ Create and retrive the commander instance.
 <b>Signature:</b>
 
 ```typescript
-export declare function program(metaIstance: Ctor<any>): Command;
+export declare function program<T>(metaIstance: Ctor<T>): Command & T;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  metaIstance | [Ctor](./meta-commander.ctor.md)<!-- -->&lt;any&gt; | Constructor function |
+|  metaIstance | [Ctor](./meta-commander.ctor.md)<!-- -->&lt;T&gt; | Constructor function |
 
 <b>Returns:</b>
 
-Command
+Command &amp; T
 
 Commander instance
 
