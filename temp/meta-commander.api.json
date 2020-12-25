@@ -7,7 +7,7 @@
   },
   "kind": "Package",
   "canonicalReference": "@dual-lab/meta-commander!",
-  "docComment": "",
+  "docComment": "/**\n * A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (\\@MetaCommand, \\@MetaOption ...).\n *\n * @remarks\n *\n * Before use this decorators you need to import into your main files reflect-metadata npm module. Commnder is used with a no conflit option, so to get all the options you nneed to call the method opts() on the Commnad instance. And the action recive only the options not the command instance. See [avoiding option name clashes](https://github.com/tj/commander.js#avoiding-option-name-clashes)\n *\n * @example\n * ```typescript\n * import 'reflect-metadata';\n * import {CommandMeta, OptionMeta, program} from '../src/mod';\n *\n *\n * @CommandMeta('1.0.0')\n * class Proposal1 {\n *   @OptionMeta({})\n *   debug?: boolean;\n * }\n *\n * program(Proposal1).parseAsync(process.argv);\n * ```\n *\n * @packageDocumentation\n */\n",
   "name": "@dual-lab/meta-commander",
   "members": [
     {
@@ -18,7 +18,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!ActionHandler:function(1)",
-          "docComment": "",
+          "docComment": "/**\n * Annotate the method that would handler the sub command action\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -62,7 +62,7 @@
             "startIndex": 7,
             "endIndex": 8
           },
-          "releaseTag": "Public",
+          "releaseTag": "Beta",
           "overloadIndex": 1,
           "parameters": [
             {
@@ -92,20 +92,20 @@
         {
           "kind": "Interface",
           "canonicalReference": "@dual-lab/meta-commander!CommandConfig:interface",
-          "docComment": "",
+          "docComment": "/**\n * Command config object, used when defineing sub command\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
               "text": "export interface CommandConfig "
             }
           ],
-          "releaseTag": "Public",
+          "releaseTag": "Beta",
           "name": "CommandConfig",
           "members": [
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!CommandConfig#description:member",
-              "docComment": "",
+              "docComment": "/**\n * Command description\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -121,7 +121,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "description",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -131,7 +131,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!CommandConfig#name:member",
-              "docComment": "",
+              "docComment": "/**\n * Command name\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -147,7 +147,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "name",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -157,7 +157,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!CommandConfig#version:member",
-              "docComment": "",
+              "docComment": "/**\n * Command version\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -173,7 +173,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "version",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -183,7 +183,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!CommandConfig#withValue:member",
-              "docComment": "",
+              "docComment": "/**\n * Command with values\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -199,7 +199,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "withValue",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -212,7 +212,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!CommandMeta:function(1)",
-          "docComment": "",
+          "docComment": "/**\n * Commad decorator used on the class that rappresent the main program or class that rappresent sub command.\n *\n * @param config - the command config {@link CommandConfig}\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -253,7 +253,7 @@
             "startIndex": 6,
             "endIndex": 7
           },
-          "releaseTag": "Public",
+          "releaseTag": "Beta",
           "overloadIndex": 1,
           "parameters": [
             {
@@ -282,7 +282,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "@dual-lab/meta-commander!Ctor:type",
-          "docComment": "",
+          "docComment": "/**\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -297,7 +297,7 @@
               "text": ";"
             }
           ],
-          "releaseTag": "Public",
+          "releaseTag": "Beta",
           "name": "Ctor",
           "typeParameters": [
             {
@@ -320,20 +320,20 @@
         {
           "kind": "Interface",
           "canonicalReference": "@dual-lab/meta-commander!OptionConfig:interface",
-          "docComment": "",
+          "docComment": "/**\n * Meta option decorator configuration object.\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
               "text": "export interface OptionConfig "
             }
           ],
-          "releaseTag": "Public",
+          "releaseTag": "Beta",
           "name": "OptionConfig",
           "members": [
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#description:member",
-              "docComment": "",
+              "docComment": "/**\n * Description of the option will be priinted into the help message\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -349,7 +349,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "description",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -359,7 +359,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#longName:member",
-              "docComment": "",
+              "docComment": "/**\n * The long option name. If camel case it will be trasformed into kebabe case. If not specified it will be inferred from the name of the field or method. To suppress long name put equal to `false`.\n *\n * @remarks\n *\n * Can be suppressed only if the `shortName` is not\n *\n * @example\n * ```typescript\n *\n * @MetaCommand\n * class MyCli {\n *  @MetaOption({\n *    shortName: 'd'\n *    longName: 'debugEnabled'\n *  })\n *  debug?: boolean;\n * }\n *\n * ```\n *\n * @example\n * ```bash\n * my-cli --debug-enabled\n *\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -375,7 +375,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "longName",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -385,7 +385,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#processing:member",
-              "docComment": "",
+              "docComment": "/**\n * The preceseing opton args' function. see (https://github.com/tj/commander.js#custom-option-processing)\n *\n * @remarks\n *\n * If the {@link OptionMeta | \\@OptionMeta} is used on a method. That method will be the processing function.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -401,7 +401,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "processing",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -411,7 +411,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#required:member",
-              "docComment": "",
+              "docComment": "/**\n * The option is required. Default is not.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -427,7 +427,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "required",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -437,7 +437,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#shortName:member",
-              "docComment": "",
+              "docComment": "/**\n * The short option character. if not specified it will be inferred from the first letter of field or method name. To suppress short name put equal to `false`\n *\n * @remarks\n *\n * Can be suppressed only if the `longName` is not.\n *\n * @example\n * ```typescript\n *\n * @MetaCommand\n * class MyCli {\n *  @MetaOption({\n *    shortName: 'd'\n *  })\n *  debug?: boolean;\n * }\n *\n * ```\n *\n * @example\n * ```bash\n * my-cli -d\n *\n * ```\n *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -453,7 +453,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "shortName",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -463,7 +463,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#withValue:member",
-              "docComment": "",
+              "docComment": "/**\n * Configuration for option that take a value.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -479,7 +479,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Public",
+              "releaseTag": "Beta",
               "name": "withValue",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -492,7 +492,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!OptionMeta:function(1)",
-          "docComment": "",
+          "docComment": "/**\n * Meta option decorator used to configure option command. This can be put on filed or class methods. If put on class methods this one will be used as the option processor.\n *\n * @remarks\n *\n * - When used on class method `this` will no longer refer to the instance. - When used on class fields the name fileds will be used as the short or long name, if those are not specified inside the configuration object. If the field is of array type then is the option accept and argumente this will be default vardiac.\n *\n * @param config - Configuration object {@link OptionConfig}\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -529,7 +529,7 @@
             "startIndex": 3,
             "endIndex": 6
           },
-          "releaseTag": "Public",
+          "releaseTag": "Beta",
           "overloadIndex": 1,
           "parameters": [
             {
@@ -545,7 +545,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!program:function(1)",
-          "docComment": "",
+          "docComment": "/**\n * Create and retrive the commander instance.\n *\n * @param metaIstance - Constructor function\n *\n * @returns Commander instance\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -578,7 +578,7 @@
             "startIndex": 4,
             "endIndex": 5
           },
-          "releaseTag": "Public",
+          "releaseTag": "Beta",
           "overloadIndex": 1,
           "parameters": [
             {
@@ -607,7 +607,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!SubCommandMeta:function(1)",
-          "docComment": "",
+          "docComment": "/**\n * Sub command decorator used on filed of type a class decorated with the Command decorator.\n *\n * @param isDefault - If this sub commond is the dafault one\n *\n * @param hidden - if this command shuold be hidden from help message\n *\n * @example\n * ```typescript\n * @CommandMeta({\n *   name: 'brew',\n *   description: 'Brew a cup of coffe',\n *   withValue: {\n *     vardiac: false,\n *     descName: 'coffeType',\n *     optional: false\n *   }\n * })\n * class Brew {\n *   @OptionMeta({\n *     description: 'Enable debug mode',\n *     shortName: 'd',\n *     longName: 'debug'\n *   })\n *   debug?: boolean;\n *\n *   @ActionHandler\n *   brewCoffe(args, options){\n *    // TO something special :-D\n *   }\n * }\n *\n * @CommandMeta({\n *   version: '1.0.0',\n *   name: 'my-cli'\n * })\n * class MyCli {\n *  @SubCommandMeta()\n *  brew?: Brew;\n * }\n * ```\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -651,7 +651,7 @@
             "startIndex": 5,
             "endIndex": 8
           },
-          "releaseTag": "Public",
+          "releaseTag": "Beta",
           "overloadIndex": 1,
           "parameters": [
             {

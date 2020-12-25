@@ -4,26 +4,50 @@
 
 ## meta-commander package
 
+A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (<!-- -->@<!-- -->MetaCommand, @<!-- -->MetaOption ...).
+
+## Remarks
+
+Before use this decorators you need to import into your main files reflect-metadata npm module. Commnder is used with a no conflit option, so to get all the options you nneed to call the method opts() on the Commnad instance. And the action recive only the options not the command instance. See \[avoiding option name clashes\](https://github.com/tj/commander.js\#avoiding-option-name-clashes)
+
+## Example
+
+
+```typescript
+import 'reflect-metadata';
+import {CommandMeta, OptionMeta, program} from '../src/mod';
+
+
+@CommandMeta('1.0.0')
+class Proposal1 {
+  @OptionMeta({})
+  debug?: boolean;
+}
+
+program(Proposal1).parseAsync(process.argv);
+
+```
+
 ## Functions
 
 |  Function | Description |
 |  --- | --- |
-|  [ActionHandler(proto, key, descriptor)](./meta-commander.actionhandler.md) |  |
-|  [CommandMeta(config)](./meta-commander.commandmeta.md) |  |
-|  [OptionMeta(config)](./meta-commander.optionmeta.md) |  |
-|  [program(metaIstance)](./meta-commander.program.md) |  |
-|  [SubCommandMeta(isDefault, hidden)](./meta-commander.subcommandmeta.md) |  |
+|  [ActionHandler(proto, key, descriptor)](./meta-commander.actionhandler.md) | <b><i>(BETA)</i></b> Annotate the method that would handler the sub command action |
+|  [CommandMeta(config)](./meta-commander.commandmeta.md) | <b><i>(BETA)</i></b> Commad decorator used on the class that rappresent the main program or class that rappresent sub command. |
+|  [OptionMeta(config)](./meta-commander.optionmeta.md) | <b><i>(BETA)</i></b> Meta option decorator used to configure option command. This can be put on filed or class methods. If put on class methods this one will be used as the option processor. |
+|  [program(metaIstance)](./meta-commander.program.md) | <b><i>(BETA)</i></b> Create and retrive the commander instance. |
+|  [SubCommandMeta(isDefault, hidden)](./meta-commander.subcommandmeta.md) | <b><i>(BETA)</i></b> Sub command decorator used on filed of type a class decorated with the Command decorator. |
 
 ## Interfaces
 
 |  Interface | Description |
 |  --- | --- |
-|  [CommandConfig](./meta-commander.commandconfig.md) |  |
-|  [OptionConfig](./meta-commander.optionconfig.md) |  |
+|  [CommandConfig](./meta-commander.commandconfig.md) | <b><i>(BETA)</i></b> Command config object, used when defineing sub command |
+|  [OptionConfig](./meta-commander.optionconfig.md) | <b><i>(BETA)</i></b> Meta option decorator configuration object. |
 
 ## Type Aliases
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [Ctor](./meta-commander.ctor.md) |  |
+|  [Ctor](./meta-commander.ctor.md) | <b><i>(BETA)</i></b> |
 

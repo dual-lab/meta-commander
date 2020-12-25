@@ -4,6 +4,11 @@
 
 ## CommandConfig interface
 
+> This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
+> 
+
+Command config object, used when defineing sub command
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,8 +19,8 @@ export interface CommandConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [description?](./meta-commander.commandconfig.description.md) | string | <i>(Optional)</i> |
-|  [name?](./meta-commander.commandconfig.name.md) | string | <i>(Optional)</i> |
-|  [version?](./meta-commander.commandconfig.version.md) | string | <i>(Optional)</i> |
-|  [withValue?](./meta-commander.commandconfig.withvalue.md) | { optional?: boolean; descName?: string; vardiac?: boolean; } | <i>(Optional)</i> |
+|  [description?](./meta-commander.commandconfig.description.md) | string | <b><i>(BETA)</i></b> <i>(Optional)</i> Command description |
+|  [name?](./meta-commander.commandconfig.name.md) | string | <b><i>(BETA)</i></b> <i>(Optional)</i> Command name |
+|  [version?](./meta-commander.commandconfig.version.md) | string | <b><i>(BETA)</i></b> <i>(Optional)</i> Command version |
+|  [withValue?](./meta-commander.commandconfig.withvalue.md) | { optional?: boolean; descName?: string; vardiac?: boolean; } | <b><i>(BETA)</i></b> <i>(Optional)</i> Command with values |
 

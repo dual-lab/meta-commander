@@ -4,6 +4,11 @@
 
 ## CommandMeta() function
 
+> This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
+> 
+
+Commad decorator used on the class that rappresent the main program or class that rappresent sub command.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,7 +19,7 @@ export declare function CommandMeta<T extends Ctor<{}>>(config: CommandConfig): 
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  config | [CommandConfig](./meta-commander.commandconfig.md) |  |
+|  config | [CommandConfig](./meta-commander.commandconfig.md) | the command config [CommandConfig](./meta-commander.commandconfig.md) |
 
 <b>Returns:</b>
 

@@ -72,7 +72,7 @@ export function CommandMeta<T extends Ctor<{}>>(config: CommandConfig) {
 /**
  * Sub command decorator used on filed of type a class decorated with the Command decorator.
  *
- * @extends
+ * @example
  * ```typescript
  * @CommandMeta({
  *   name: 'brew',
@@ -124,6 +124,7 @@ export function SubCommandMeta(isDefault: boolean = false, hidden: boolean = fal
 
 
 /**
+ * Annotate the method that would handler the sub command action
  * @beta
  */
 export function ActionHandler(proto: any, key: string, descriptor: PropertyDescriptor) {

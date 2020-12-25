@@ -4,8 +4,18 @@
 
 ## OptionConfig.processing property
 
+> This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
+> 
+
+The preceseing opton args' function. see (https://github.com/tj/commander.js\#custom-option-processing)
+
 <b>Signature:</b>
 
 ```typescript
 processing?: (dummyValue: string, previusValue?: string) => any;
 ```
+
+## Remarks
+
+If the [\\@OptionMeta](./meta-commander.optionmeta.md) is used on a method. That method will be the processing function.
+
