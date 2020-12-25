@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+// Extract root dir
+const {resolve, join} = require("path");
+const root = resolve(__dirname, '../..');
+
+const tsst = require("@dual-lab/tsst");
+// Extract the proposal  to run
+const proposal = process.argv.slice(2)[0];
+
+
+(async () => {
+  try {
+    // instal typescript on the fly compiler
+    if (tsst.toolchain().withTsconfig(join(root, 'tsconfig.json')).install() !== 0) {
+      throw new Error("Failed installing typescript on the fly compiler");
+    }
+    require(`../${proposal}.ts`);
+    process.exitCode = 0;
+  } catch (err) {
+    process.stderr.write(`+ FATAL + <> command ${proposal} failed: ${err.message}\n`);
+    process.exitCode = 1;
+  }
+})();
