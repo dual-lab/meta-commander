@@ -105,8 +105,8 @@ export interface OptionConfig {
  * If put on class methods this one will be used as the option processor.
  *
  * @remarks
- *  -When used on class method `this` will no longer refer to the instance.
- *  -When used on class fields the name fileds will be used as the short or long name, if those
+ *  - When used on class method `this` will no longer refer to the instance.
+ *  - When used on class fields the name fileds will be used as the short or long name, if those
  *   are not specified inside the configuration object.
  *   If  the field is of array type  then is the option accept and argumente this
  *   will be default vardiac.

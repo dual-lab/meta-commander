@@ -19,4 +19,4 @@ export function getMetaReturnType(target: any, key: string): JSType {
 /**
  * @internal
  */
-export type JSType = Boolean | typeof Array | String | Object;
+export type JSType = Boolean | typeof Array | String | Object | FunctionConstructor | Function;

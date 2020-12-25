@@ -21,7 +21,7 @@
  * ```
  *
  * @remarks
- * Before use this decorators you need to import into yuor main files reflect-metadata
+ * Before use this decorators you need to import into your main files reflect-metadata
  * npm module.
  * Commnder is used with a no conflit option, so to get all the options you nneed to
  * call the method opts() on the Commnad instance. 
@@ -34,7 +34,7 @@ import {Command} from "commander";
 import {__internal__} from "./internal";
 import {Ctor} from "./util/types";
 
-export {CommandMeta} from "./meta/command";
+export {CommandMeta, SubCommandMeta, CommandConfig, ActionHandler} from "./meta/command";
 export {OptionMeta, OptionConfig} from "./meta/options";
 export {Ctor} from "./util/types";
 

@@ -105,7 +105,7 @@ export class OptionCommanderComposer {
       if (withValue.vardiac === undefined) {
         withValue.vardiac = metaType === Array;
       }
-    } 
+    }
 
     return this;
   }
@@ -129,9 +129,8 @@ export class OptionCommanderComposer {
 
   private get value(): string {
     const {withValue} = this.#metaConfig;
-    const delimiter: [string, string] = withValue?.optional === true ? ['[', ']'] : ['<', '>'];
 
-    return withValue?.descName ? `${delimiter[0]}${withValue?.descName ?? 'args'}${withValue?.vardiac === true ? '...' : ''}${delimiter[1]}` : '';
+    return composeValue(withValue ?? {});
   }
 
   private validatePartial(): string | null {
@@ -163,4 +162,14 @@ export class OptionCommanderComposer {
 
     return null;
   }
+}
+
+/**
+ * @internal
+ */
+export function composeValue({optional, descName, vardiac}: {optional?: boolean, descName?: string, vardiac?: boolean}): string {
+  const delimiter: [string, string] = optional === true ? ['[', ']'] : ['<', '>'];
+
+  return descName ? `${delimiter[0]}${descName ?? 'args'}${vardiac === true ? '...' : ''}${delimiter[1]}` : '';
+
 }
