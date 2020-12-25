@@ -7,7 +7,7 @@
   },
   "kind": "Package",
   "canonicalReference": "@dual-lab/meta-commander!",
-  "docComment": "/**\n * A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (\\@MetaCommand, \\@MetaOption ...).\n *\n * @remarks\n *\n * Before use this decorators you need to import into yuor main files reflect-metadata npm module. Commnder is used with a no conflit option, so to get all the options you nneed to call the method opts() on the Commnad instance. See (https://github.com/tj/commander.js#avoiding-option-name-clashes)\n *\n * @example\n * ```typescript\n * import 'reflect-metadata';\n * import {CommandMeta, OptionMeta, program} from '../src/mod';\n *\n *\n * @CommandMeta('1.0.0')\n * class Proposal1 {\n *   @OptionMeta({})\n *   debug?: boolean;\n * }\n *\n * program(Proposal1).parseAsync(process.argv);\n * ```\n *\n * @packageDocumentation\n */\n",
+  "docComment": "",
   "name": "@dual-lab/meta-commander",
   "members": [
     {
@@ -17,8 +17,202 @@
       "members": [
         {
           "kind": "Function",
+          "canonicalReference": "@dual-lab/meta-commander!ActionHandler:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function ActionHandler(proto: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ", key: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", descriptor: "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyDescriptor",
+              "canonicalReference": "!PropertyDescriptor:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "proto",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "parameterName": "key",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            },
+            {
+              "parameterName": "descriptor",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            }
+          ],
+          "name": "ActionHandler"
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@dual-lab/meta-commander!CommandConfig:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface CommandConfig "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "CommandConfig",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!CommandConfig#description:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "description?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "description",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!CommandConfig#name:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!CommandConfig#version:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "version?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "version",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@dual-lab/meta-commander!CommandConfig#withValue:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "withValue?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        optional?: boolean;\n        descName?: string;\n        vardiac?: boolean;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "withValue",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!CommandMeta:function(1)",
-          "docComment": "/**\n * Main commad decorator used on the class that rapresent the main program.\n *\n * @param version - ther program version\n *\n * @param name - the program name default to class name\n *\n * @beta\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -35,19 +229,12 @@
             },
             {
               "kind": "Content",
-              "text": ">(version: "
+              "text": ">(config: "
             },
             {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": ", name?: "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
+              "kind": "Reference",
+              "text": "CommandConfig",
+              "canonicalReference": "@dual-lab/meta-commander!CommandConfig:interface"
             },
             {
               "kind": "Content",
@@ -63,24 +250,17 @@
             }
           ],
           "returnTypeTokenRange": {
-            "startIndex": 8,
-            "endIndex": 9
+            "startIndex": 6,
+            "endIndex": 7
           },
-          "releaseTag": "Beta",
+          "releaseTag": "Public",
           "overloadIndex": 1,
           "parameters": [
             {
-              "parameterName": "version",
+              "parameterName": "config",
               "parameterTypeTokenRange": {
                 "startIndex": 4,
                 "endIndex": 5
-              }
-            },
-            {
-              "parameterName": "name",
-              "parameterTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
               }
             }
           ],
@@ -102,7 +282,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "@dual-lab/meta-commander!Ctor:type",
-          "docComment": "/**\n * @beta\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -117,7 +297,7 @@
               "text": ";"
             }
           ],
-          "releaseTag": "Beta",
+          "releaseTag": "Public",
           "name": "Ctor",
           "typeParameters": [
             {
@@ -140,20 +320,20 @@
         {
           "kind": "Interface",
           "canonicalReference": "@dual-lab/meta-commander!OptionConfig:interface",
-          "docComment": "/**\n * Meta option decorator configuration object.\n *\n * @beta\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
               "text": "export interface OptionConfig "
             }
           ],
-          "releaseTag": "Beta",
+          "releaseTag": "Public",
           "name": "OptionConfig",
           "members": [
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#description:member",
-              "docComment": "/**\n * Description of the option will be priinted into the help message\n */\n",
+              "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -169,7 +349,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Beta",
+              "releaseTag": "Public",
               "name": "description",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -179,7 +359,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#longName:member",
-              "docComment": "/**\n * The long option name. If camel case it will be trasformed into kebabe case. If not specified it will be inferred from the name of the field or method. To suppress long name put equal to `false`.\n *\n * @remarks\n *\n * Can be suppressed only if the `shortName` is not\n *\n * @example\n * ```typescript\n *\n * @MetaCommand\n * class MyCli {\n *  @MetaOption({\n *    shortName: 'd'\n *    longName: 'debugEnabled'\n *  })\n *  debug?: boolean;\n * }\n *\n * ```\n *\n * @example\n * ```bash\n * my-cli --debug-enabled\n *\n * ```\n *\n */\n",
+              "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -195,7 +375,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Beta",
+              "releaseTag": "Public",
               "name": "longName",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -205,7 +385,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#processing:member",
-              "docComment": "/**\n * The preceseing opton args' function. see (https://github.com/tj/commander.js#custom-option-processing)\n *\n * @remarks\n *\n * If the {@link OptionMeta | \\@OptionMeta} is used on a method. That method will be the processing function.\n */\n",
+              "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -221,7 +401,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Beta",
+              "releaseTag": "Public",
               "name": "processing",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -231,7 +411,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#required:member",
-              "docComment": "/**\n * The option is required. Default is not.\n */\n",
+              "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -247,7 +427,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Beta",
+              "releaseTag": "Public",
               "name": "required",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -257,7 +437,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#shortName:member",
-              "docComment": "/**\n * The short option character. if not specified it will be inferred from the first letter of field or method name. To suppress short name put equal to `false`\n *\n * @remarks\n *\n * Can be suppressed only if the `longName` is not.\n *\n * @example\n * ```typescript\n *\n * @MetaCommand\n * class MyCli {\n *  @MetaOption({\n *    shortName: 'd'\n *  })\n *  debug?: boolean;\n * }\n *\n * ```\n *\n * @example\n * ```bash\n * my-cli -d\n *\n * ```\n *\n */\n",
+              "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -273,7 +453,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Beta",
+              "releaseTag": "Public",
               "name": "shortName",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -283,7 +463,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#withValue:member",
-              "docComment": "/**\n * Configuration for option that take a value.\n */\n",
+              "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -299,7 +479,7 @@
                 }
               ],
               "isOptional": true,
-              "releaseTag": "Beta",
+              "releaseTag": "Public",
               "name": "withValue",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
@@ -312,7 +492,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!OptionMeta:function(1)",
-          "docComment": "/**\n * Meta option decorator used to configure option command. This can be put on filed or class methods. If put on class methods this one will be used as the option processor.\n *\n * @remarks\n *\n * -When used on class method `this` will no longer refer to the instance. -When used on class fields the name fileds will be used as the short or long name, if those are not specified inside the configuration object. If the field is of array type then is the option accept and argumente this will be default vardiac.\n *\n * @param config - Configuration object {@link OptionConfig}\n *\n * @beta\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -349,7 +529,7 @@
             "startIndex": 3,
             "endIndex": 6
           },
-          "releaseTag": "Beta",
+          "releaseTag": "Public",
           "overloadIndex": 1,
           "parameters": [
             {
@@ -365,7 +545,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!program:function(1)",
-          "docComment": "/**\n * Create and retrive the commander instance.\n *\n * @param metaIstance - Constructor function\n *\n * @returns Commander instance\n *\n * @beta\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -398,7 +578,7 @@
             "startIndex": 4,
             "endIndex": 5
           },
-          "releaseTag": "Beta",
+          "releaseTag": "Public",
           "overloadIndex": 1,
           "parameters": [
             {
@@ -423,6 +603,73 @@
             }
           ],
           "name": "program"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@dual-lab/meta-commander!SubCommandMeta:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function SubCommandMeta(isDefault?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": ", hidden?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "(proto: any, key: string, description?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyDescriptor",
+              "canonicalReference": "!PropertyDescriptor:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined) => void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "isDefault",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "parameterName": "hidden",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "name": "SubCommandMeta"
         }
       ]
     }

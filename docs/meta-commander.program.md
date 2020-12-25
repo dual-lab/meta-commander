@@ -4,11 +4,6 @@
 
 ## program() function
 
-> This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
-> 
-
-Create and retrive the commander instance.
-
 <b>Signature:</b>
 
 ```typescript
@@ -19,11 +14,9 @@ export declare function program<T>(metaIstance: Ctor<T>): Command;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  metaIstance | [Ctor](./meta-commander.ctor.md)<!-- -->&lt;T&gt; | Constructor function |
+|  metaIstance | [Ctor](./meta-commander.ctor.md)<!-- -->&lt;T&gt; |  |
 
 <b>Returns:</b>
 
 Command
-
-Commander instance
 

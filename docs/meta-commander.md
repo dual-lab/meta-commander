@@ -4,47 +4,26 @@
 
 ## meta-commander package
 
-A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (<!-- -->@<!-- -->MetaCommand, @<!-- -->MetaOption ...).
-
-## Remarks
-
-Before use this decorators you need to import into yuor main files reflect-metadata npm module. Commnder is used with a no conflit option, so to get all the options you nneed to call the method opts() on the Commnad instance. See (https://github.com/tj/commander.js\#avoiding-option-name-clashes)
-
-## Example
-
-
-```typescript
-import 'reflect-metadata';
-import {CommandMeta, OptionMeta, program} from '../src/mod';
-
-
-@CommandMeta('1.0.0')
-class Proposal1 {
-  @OptionMeta({})
-  debug?: boolean;
-}
-
-program(Proposal1).parseAsync(process.argv);
-
-```
-
 ## Functions
 
 |  Function | Description |
 |  --- | --- |
-|  [CommandMeta(version, name)](./meta-commander.commandmeta.md) | <b><i>(BETA)</i></b> Main commad decorator used on the class that rapresent the main program. |
-|  [OptionMeta(config)](./meta-commander.optionmeta.md) | <b><i>(BETA)</i></b> Meta option decorator used to configure option command. This can be put on filed or class methods. If put on class methods this one will be used as the option processor. |
-|  [program(metaIstance)](./meta-commander.program.md) | <b><i>(BETA)</i></b> Create and retrive the commander instance. |
+|  [ActionHandler(proto, key, descriptor)](./meta-commander.actionhandler.md) |  |
+|  [CommandMeta(config)](./meta-commander.commandmeta.md) |  |
+|  [OptionMeta(config)](./meta-commander.optionmeta.md) |  |
+|  [program(metaIstance)](./meta-commander.program.md) |  |
+|  [SubCommandMeta(isDefault, hidden)](./meta-commander.subcommandmeta.md) |  |
 
 ## Interfaces
 
 |  Interface | Description |
 |  --- | --- |
-|  [OptionConfig](./meta-commander.optionconfig.md) | <b><i>(BETA)</i></b> Meta option decorator configuration object. |
+|  [CommandConfig](./meta-commander.commandconfig.md) |  |
+|  [OptionConfig](./meta-commander.optionconfig.md) |  |
 
 ## Type Aliases
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [Ctor](./meta-commander.ctor.md) | <b><i>(BETA)</i></b> |
+|  [Ctor](./meta-commander.ctor.md) |  |
 

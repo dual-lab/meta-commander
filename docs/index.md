@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@dual-lab/meta-commander](./meta-commander.md) | A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (<!-- -->@<!-- -->MetaCommand, @<!-- -->MetaOption ...). |
+|  [@dual-lab/meta-commander](./meta-commander.md) |  |
 

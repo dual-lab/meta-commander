@@ -6,19 +6,54 @@
 
 import { Command } from 'commander';
 
-// @beta
-export function CommandMeta<T extends Ctor<{}>>(version: string, name?: string): (ctor: T) => T;
+// Warning: (ae-missing-release-tag) "ActionHandler" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export function ActionHandler(proto: any, key: string, descriptor: PropertyDescriptor): void;
 
-// @beta (undocumented)
+// Warning: (ae-missing-release-tag) "CommandConfig" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export interface CommandConfig {
+    // (undocumented)
+    description?: string;
+    // (undocumented)
+    name?: string;
+    // (undocumented)
+    version?: string;
+    // (undocumented)
+    withValue?: {
+        optional?: boolean;
+        descName?: string;
+        vardiac?: boolean;
+    };
+}
+
+// Warning: (ae-missing-release-tag) "CommandMeta" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export function CommandMeta<T extends Ctor<{}>>(config: CommandConfig): (ctor: T) => T;
+
+// Warning: (ae-missing-release-tag) "Ctor" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
 export type Ctor<T> = new (...args: any[]) => T;
 
-// @beta
+// Warning: (ae-missing-release-tag) "OptionConfig" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
 export interface OptionConfig {
+    // (undocumented)
     description?: string;
+    // (undocumented)
     longName?: string | false;
+    // (undocumented)
     processing?: (dummyValue: string, previusValue?: string) => any;
+    // (undocumented)
     required?: boolean;
+    // (undocumented)
     shortName?: string | false;
+    // (undocumented)
     withValue?: {
         defaultValue?: any;
         descName?: string;
@@ -27,11 +62,22 @@ export interface OptionConfig {
     };
 }
 
-// @beta
+// Warning: (ae-missing-release-tag) "OptionMeta" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
 export function OptionMeta(config: OptionConfig): (proto: any, key: string, descriptor?: PropertyDescriptor | undefined) => void;
 
-// @beta
+// Warning: (ae-missing-release-tag) "program" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
 export function program<T>(metaIstance: Ctor<T>): Command;
 
+// Warning: (ae-missing-release-tag) "SubCommandMeta" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export function SubCommandMeta(isDefault?: boolean, hidden?: boolean): (proto: any, key: string, description?: PropertyDescriptor | undefined) => void;
+
+
+// (No @packageDocumentation comment for this package)
 
 ```

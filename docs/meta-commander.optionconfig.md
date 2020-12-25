@@ -4,11 +4,6 @@
 
 ## OptionConfig interface
 
-> This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
-> 
-
-Meta option decorator configuration object.
-
 <b>Signature:</b>
 
 ```typescript
@@ -19,10 +14,10 @@ export interface OptionConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [description?](./meta-commander.optionconfig.description.md) | string | <b><i>(BETA)</i></b> <i>(Optional)</i> Description of the option will be priinted into the help message |
-|  [longName?](./meta-commander.optionconfig.longname.md) | string \| false | <b><i>(BETA)</i></b> <i>(Optional)</i> The long option name. If camel case it will be trasformed into kebabe case. If not specified it will be inferred from the name of the field or method. To suppress long name put equal to <code>false</code>. |
-|  [processing?](./meta-commander.optionconfig.processing.md) | (dummyValue: string, previusValue?: string) =&gt; any | <b><i>(BETA)</i></b> <i>(Optional)</i> The preceseing opton args' function. see (https://github.com/tj/commander.js\#custom-option-processing) |
-|  [required?](./meta-commander.optionconfig.required.md) | boolean | <b><i>(BETA)</i></b> <i>(Optional)</i> The option is required. Default is not. |
-|  [shortName?](./meta-commander.optionconfig.shortname.md) | string \| false | <b><i>(BETA)</i></b> <i>(Optional)</i> The short option character. if not specified it will be inferred from the first letter of field or method name. To suppress short name put equal to <code>false</code> |
-|  [withValue?](./meta-commander.optionconfig.withvalue.md) | { defaultValue?: any; descName?: string; optional?: boolean; vardiac?: boolean; } | <b><i>(BETA)</i></b> <i>(Optional)</i> Configuration for option that take a value. |
+|  [description?](./meta-commander.optionconfig.description.md) | string | <i>(Optional)</i> |
+|  [longName?](./meta-commander.optionconfig.longname.md) | string \| false | <i>(Optional)</i> |
+|  [processing?](./meta-commander.optionconfig.processing.md) | (dummyValue: string, previusValue?: string) =&gt; any | <i>(Optional)</i> |
+|  [required?](./meta-commander.optionconfig.required.md) | boolean | <i>(Optional)</i> |
+|  [shortName?](./meta-commander.optionconfig.shortname.md) | string \| false | <i>(Optional)</i> |
+|  [withValue?](./meta-commander.optionconfig.withvalue.md) | { defaultValue?: any; descName?: string; optional?: boolean; vardiac?: boolean; } | <i>(Optional)</i> |
 
