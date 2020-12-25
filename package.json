@@ -22,7 +22,7 @@
     "test": "echo 'TODO'",
     "test:watch": "echo 'TODO'",
     "changelog": "standard-changelog",
-    "api-extractor:init": "api-extractor init",
+    "api-extractor": "api-extractor",
     "api-extractor:local": "api-extractor run --local --verbose",
     "api-extractor:docs": "api-documenter markdown --input-folder temp --output-folder docs"
   },
