@@ -11,7 +11,8 @@
       "."
     ],
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "removeComments": true
   },
   "include": [
     "./**/*.ts"

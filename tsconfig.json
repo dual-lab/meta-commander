@@ -13,6 +13,8 @@
     "strictNullChecks": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "sourceMap": true,
+    "removeComments": false,
     "lib": [
       "esnext"
     ],
