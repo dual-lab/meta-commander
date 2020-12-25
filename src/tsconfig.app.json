@@ -9,8 +9,7 @@
       "."
     ],
     "declaration": true,
-    "declarationMap": true,
-    "removeComments": true
+    "declarationMap": true
   },
   "include": [
     "./**/*.ts"
