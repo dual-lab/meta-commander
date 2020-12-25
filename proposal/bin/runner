@@ -6,8 +6,8 @@ const root = resolve(__dirname, '../..');
 
 const tsst = require("@dual-lab/tsst");
 // Extract the proposal  to run
-const proposal = process.argv.slice(2)[0];
-
+process.argv.splice(0, 2);
+const proposal = process.argv.shift();
 
 (async () => {
   try {

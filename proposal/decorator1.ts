@@ -1,8 +1,32 @@
 import 'reflect-metadata';
-import {CommandMeta, OptionMeta, program} from '../src/mod';
+import {ActionHandler, CommandMeta, OptionMeta, program, SubCommandMeta} from '../src/mod';
 
+@CommandMeta({
+  name: 'brew',
+  description: 'Brew a cup of coffe',
+  withValue: {
+    vardiac: false,
+    descName: 'coffeType',
+    optional: false
+  }
+})
+class Brew {
+  @OptionMeta({
+    description: 'Use vhrio',
+    longName: 'vhario'
+  })
+  vhario?: boolean;
 
-@CommandMeta('1.0.0')
+  @ActionHandler
+  brewCoffe?(coffe: string, options: any) {
+    console.info(coffe, options);
+  }
+}
+
+@CommandMeta({
+  version: '1.0.0',
+  name: 'decorator1'
+})
 class Proposal1 {
   @OptionMeta({
     description: 'Enable debug mode',
@@ -12,7 +36,7 @@ class Proposal1 {
   debug?: boolean;
   @OptionMeta({
     shortName: 'p',
-    longName : 'pizza',
+    longName: 'pizza',
     withValue: {
       descName: 'types'
     }
@@ -28,9 +52,14 @@ class Proposal1 {
   verbose?(value: number, prev: number): number {
     return 1 + prev;
   }
+
+  @SubCommandMeta(true)
+  brew?: Brew;
 }
+
+
 
 const cli = program(Proposal1);
 
-cli.parse(process.argv);
-console.info('verbosity', cli.opts().v);
+cli.parse(process.argv, {from: 'user'});
+console.info('all cli options', cli.opts());
