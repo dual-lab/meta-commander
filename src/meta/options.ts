@@ -32,7 +32,7 @@ export interface OptionConfig {
    * @remarks
    * Can be suppressed only if the `longName` is not.
    */
-  shortName?: string;
+  shortName?: string | false;
   /**
    * The long option name. If camel case it will be trasformed into
    * kebabe case. If not specified it will be inferred from the name of the field
@@ -61,7 +61,7 @@ export interface OptionConfig {
    * @remarks
    * Can be suppressed only if the `shortName` is not
    */
-  longName?: string;
+  longName?: string | false;
   /**
    * Description of the option will be priinted into the help message
    */
@@ -72,7 +72,7 @@ export interface OptionConfig {
   required?: boolean;
   /**
    * The preceseing opton args' function.
-   * see [https://github.com/tj/commander.js#custom-option-processing](Custom option processing)
+   * see (https://github.com/tj/commander.js#custom-option-processing)[Custom option processing]
    *
    * @remarks
    * If the {@link OptionMeta | \@OptionMeta} is used on a method. That method will be the processing
@@ -82,7 +82,7 @@ export interface OptionConfig {
   /**
    * Configuration for option that take a value. 
    */
-  wtihValue?: {
+  withValue?: {
     /**
      * Default value.
      */
@@ -95,6 +95,7 @@ export interface OptionConfig {
      * Value is optional or not.
      */
     optional?: boolean;
+    vardiac?: boolean;
   }
 }
 
@@ -103,9 +104,17 @@ export interface OptionConfig {
  */
 export function OptionMeta(config: OptionConfig) {
   //TODO prepare commander options instance
-  return function (proto: any, key: any) {
-    //TODO add commander config to field metadata
-    //TODO if used on a methods use its value as the option parser
-    __internal__.setOptionMeta(proto, ['-d', 'pippo'] as __internal__.CommanderOptionArgs);
+  return function (proto: any, key: string, descriptor?: PropertyDescriptor) {
+    const optC = __internal__.OptionCommanderComposer.from(config);
+    if (descriptor === undefined){
+      // infer config from filed metadata
+      optC.inferFromField(__internal__.getMetaType(proto, key), key);
+    } else if(__internal__.getMetaType(proto, key) === Function) {
+      // thake the method as the option processor function
+      optC.inferFromMethod(descriptor.value);
+    } else {
+      throw new Error('@OptionMeta decorator is supported only on fields and instance methods.')
+    }
+    __internal__.setOptionMeta(proto, optC.compose());
   }
 }

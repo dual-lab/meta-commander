@@ -4,14 +4,33 @@ import {CommandMeta, OptionMeta, program} from '../src/mod';
 
 @CommandMeta('1.0.0')
 class Proposal1 {
-  @OptionMeta({})
+  @OptionMeta({
+    description: 'Enable debug mode',
+    shortName: 'd',
+    longName: 'debug'
+  })
   debug?: boolean;
-  @OptionMeta({})
-  debugs?: string[];
-  @OptionMeta({})
-  debuged?(pippo: number, ciao: string): boolean {
-    return false;
+  @OptionMeta({
+    shortName: 'p',
+    longName : 'pizza',
+    withValue: {
+      descName: 'types'
+    }
+  })
+  pizza?: string[];
+  @OptionMeta({
+    shortName: 'v',
+    description: 'verbosity tha can be incresed',
+    withValue: {
+      defaultValue: 0
+    }
+  })
+  verbose?(value: number, prev: number): number {
+    return 1 + prev;
   }
 }
 
-program(Proposal1).parseAsync(process.argv);
+const cli = program(Proposal1);
+
+cli.parse(process.argv);
+console.info('verbosity', cli.opts().v);
