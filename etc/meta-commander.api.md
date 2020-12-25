@@ -7,7 +7,7 @@
 import { Command } from 'commander';
 
 // @beta (undocumented)
-export function CommandMeta<T extends Ctor<{}>>(version: string): (ctor: T) => T;
+export function CommandMeta<T extends Ctor<{}>>(version: string, name?: string): (ctor: T) => T;
 
 // @beta (undocumented)
 export type Ctor<T> = new (...args: any[]) => T;
@@ -15,22 +15,23 @@ export type Ctor<T> = new (...args: any[]) => T;
 // @beta
 export interface OptionConfig {
     description?: string;
-    longName?: string;
+    longName?: string | false;
     processing?: (dummyValue: string, previusValue?: string) => any;
     required?: boolean;
-    shortName?: string;
-    wtihValue?: {
+    shortName?: string | false;
+    withValue?: {
         defaultValue?: any;
         descName?: string;
         optional?: boolean;
+        vardiac?: boolean;
     };
 }
 
 // @beta (undocumented)
-export function OptionMeta(config: OptionConfig): (proto: any, key: any) => void;
+export function OptionMeta(config: OptionConfig): (proto: any, key: string, descriptor?: PropertyDescriptor | undefined) => void;
 
 // @beta
-export function program<T>(metaIstance: Ctor<T>): Command & T;
+export function program<T>(metaIstance: Ctor<T>): Command;
 
 
 ```

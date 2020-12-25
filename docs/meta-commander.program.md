@@ -12,7 +12,7 @@ Create and retrive the commander instance.
 <b>Signature:</b>
 
 ```typescript
-export declare function program<T>(metaIstance: Ctor<T>): Command & T;
+export declare function program<T>(metaIstance: Ctor<T>): Command;
 ```
 
 ## Parameters
@@ -23,7 +23,7 @@ export declare function program<T>(metaIstance: Ctor<T>): Command & T;
 
 <b>Returns:</b>
 
-Command &amp; T
+Command
 
 Commander instance
 

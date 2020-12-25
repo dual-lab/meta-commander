@@ -8,7 +8,7 @@ A library for building commader program using static decorators. The program's i
 
 ## Remarks
 
-Before use this decorators you need to import into yuor main files reflect-metadata npm module.
+Commnder is used with a no conflit option, so to get all the options you nneed to call the method opts() on the Commnad instance. See (https://github.com/tj/commander.js\#avoiding-option-name-clashes)\[Avoid name clash\]
 
 ## Example
 
@@ -32,7 +32,7 @@ program(Proposal1).parseAsync(process.argv);
 
 |  Function | Description |
 |  --- | --- |
-|  [CommandMeta(version)](./meta-commander.commandmeta.md) | <b><i>(BETA)</i></b> |
+|  [CommandMeta(version, name)](./meta-commander.commandmeta.md) | <b><i>(BETA)</i></b> |
 |  [OptionMeta(config)](./meta-commander.optionmeta.md) | <b><i>(BETA)</i></b> |
 |  [program(metaIstance)](./meta-commander.program.md) | <b><i>(BETA)</i></b> Create and retrive the commander instance. |
 

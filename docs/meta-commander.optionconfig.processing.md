@@ -7,7 +7,7 @@
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
 > 
 
-The preceseing opton args' function. see \[https://github.com/tj/commander.js\#custom-option-processing\](Custom option processing)
+The preceseing opton args' function. see (https://github.com/tj/commander.js\#custom-option-processing)\[Custom option processing\]
 
 <b>Signature:</b>
 

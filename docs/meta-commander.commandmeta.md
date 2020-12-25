@@ -11,7 +11,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function CommandMeta<T extends Ctor<{}>>(version: string): (ctor: T) => T;
+export declare function CommandMeta<T extends Ctor<{}>>(version: string, name?: string): (ctor: T) => T;
 ```
 
 ## Parameters
@@ -19,6 +19,7 @@ export declare function CommandMeta<T extends Ctor<{}>>(version: string): (ctor:
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  version | string |  |
+|  name | string |  |
 
 <b>Returns:</b>
 

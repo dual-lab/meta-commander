@@ -11,7 +11,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function OptionMeta(config: OptionConfig): (proto: any, key: any) => void;
+export declare function OptionMeta(config: OptionConfig): (proto: any, key: string, descriptor?: PropertyDescriptor | undefined) => void;
 ```
 
 ## Parameters
@@ -22,5 +22,5 @@ export declare function OptionMeta(config: OptionConfig): (proto: any, key: any)
 
 <b>Returns:</b>
 
-(proto: any, key: any) =&gt; void
+(proto: any, key: string, descriptor?: PropertyDescriptor \| undefined) =&gt; void
 

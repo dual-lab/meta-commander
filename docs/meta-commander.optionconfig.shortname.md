@@ -12,7 +12,7 @@ The short option character. if not specified it will be inferred from the first 
 <b>Signature:</b>
 
 ```typescript
-shortName?: string;
+shortName?: string | false;
 ```
 
 ## Remarks

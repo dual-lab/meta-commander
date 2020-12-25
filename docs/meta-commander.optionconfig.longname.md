@@ -12,7 +12,7 @@ The long option name. If camel case it will be trasformed into kebabe case. If n
 <b>Signature:</b>
 
 ```typescript
-longName?: string;
+longName?: string | false;
 ```
 
 ## Remarks
