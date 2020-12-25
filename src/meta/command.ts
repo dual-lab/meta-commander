@@ -3,6 +3,10 @@ import {__internal__} from "../internal";
 import type {Ctor} from "../util/types";
 
 /**
+ * Main commad decorator used on the class that rapresent the main program.
+ *
+ * @param version - ther program version
+ * @param name - the program name default to class name
  * @beta
  */
 export function CommandMeta<T extends Ctor<{}>>(version: string, name?: string) {
@@ -18,8 +22,6 @@ export function CommandMeta<T extends Ctor<{}>>(version: string, name?: string) 
     (__internal__.getOptionMetaOnce(ctor.prototype) ?? [])
       .forEach(([flags, desc, processor, value, required]) => required ? __program.requiredOption(flags, desc, processor, value)
         : __program.option(flags, desc, processor, value));
-    // (__internal__.getOptionMetaOnce(ctor.prototype) ?? [])
-    //   .forEach((values) => console.info('Option args', values));
 
 
     //TODO Collect sub command

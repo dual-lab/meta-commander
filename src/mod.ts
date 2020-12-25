@@ -23,11 +23,9 @@
  * @remarks
  * Before use this decorators you need to import into yuor main files reflect-metadata
  * npm module.
- * 
- * @remarks
  * Commnder is used with a no conflit option, so to get all the options you nneed to
  * call the method opts() on the Commnad instance. 
- * See (https://github.com/tj/commander.js#avoiding-option-name-clashes)[Avoid name clash]
+ * See (https://github.com/tj/commander.js#avoiding-option-name-clashes)
  *
  * @packageDocumentation
  */

@@ -7,6 +7,7 @@
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
 > 
 
+Main commad decorator used on the class that rapresent the main program.
 
 <b>Signature:</b>
 
@@ -18,8 +19,8 @@ export declare function CommandMeta<T extends Ctor<{}>>(version: string, name?: 
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  version | string |  |
-|  name | string |  |
+|  version | string | ther program version |
+|  name | string | the program name default to class name |
 
 <b>Returns:</b>
 

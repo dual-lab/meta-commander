@@ -7,7 +7,7 @@
   },
   "kind": "Package",
   "canonicalReference": "@dual-lab/meta-commander!",
-  "docComment": "/**\n * A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (\\@MetaCommand, \\@MetaOption ...).\n *\n * @remarks\n *\n * Commnder is used with a no conflit option, so to get all the options you nneed to call the method opts() on the Commnad instance. See (https://github.com/tj/commander.js#avoiding-option-name-clashes)[Avoid name clash]\n *\n * @example\n * ```typescript\n * import 'reflect-metadata';\n * import {CommandMeta, OptionMeta, program} from '../src/mod';\n *\n *\n * @CommandMeta('1.0.0')\n * class Proposal1 {\n *   @OptionMeta({})\n *   debug?: boolean;\n * }\n *\n * program(Proposal1).parseAsync(process.argv);\n * ```\n *\n * @packageDocumentation\n */\n",
+  "docComment": "/**\n * A library for building commader program using static decorators. The program's instance is built using the configuration defined into the meta decorators (\\@MetaCommand, \\@MetaOption ...).\n *\n * @remarks\n *\n * Before use this decorators you need to import into yuor main files reflect-metadata npm module. Commnder is used with a no conflit option, so to get all the options you nneed to call the method opts() on the Commnad instance. See (https://github.com/tj/commander.js#avoiding-option-name-clashes)\n *\n * @example\n * ```typescript\n * import 'reflect-metadata';\n * import {CommandMeta, OptionMeta, program} from '../src/mod';\n *\n *\n * @CommandMeta('1.0.0')\n * class Proposal1 {\n *   @OptionMeta({})\n *   debug?: boolean;\n * }\n *\n * program(Proposal1).parseAsync(process.argv);\n * ```\n *\n * @packageDocumentation\n */\n",
   "name": "@dual-lab/meta-commander",
   "members": [
     {
@@ -18,7 +18,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!CommandMeta:function(1)",
-          "docComment": "/**\n * @beta\n */\n",
+          "docComment": "/**\n * Main commad decorator used on the class that rapresent the main program.\n *\n * @param version - ther program version\n *\n * @param name - the program name default to class name\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -205,7 +205,7 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "@dual-lab/meta-commander!OptionConfig#processing:member",
-              "docComment": "/**\n * The preceseing opton args' function. see (https://github.com/tj/commander.js#custom-option-processing)[Custom option processing]\n *\n * @remarks\n *\n * If the {@link OptionMeta | \\@OptionMeta} is used on a method. That method will be the processing function.\n */\n",
+              "docComment": "/**\n * The preceseing opton args' function. see (https://github.com/tj/commander.js#custom-option-processing)\n *\n * @remarks\n *\n * If the {@link OptionMeta | \\@OptionMeta} is used on a method. That method will be the processing function.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -312,7 +312,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@dual-lab/meta-commander!OptionMeta:function(1)",
-          "docComment": "/**\n * @beta\n */\n",
+          "docComment": "/**\n * Meta option decorator used to configure option command. This can be put on filed or class methods. If put on class methods this one will be used as the option processor.\n *\n * @remarks\n *\n * -When used on class method `this` will no longer refer to the instance. -When used on class fields the name fileds will be used as the short or long name, if those are not specified inside the configuration object. If the field is of array type then is the option accept and argumente this will be default vardiac.\n *\n * @param config - Configuration object {@link OptionConfig}\n *\n * @beta\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

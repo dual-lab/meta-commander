@@ -6,7 +6,7 @@
 
 import { Command } from 'commander';
 
-// @beta (undocumented)
+// @beta
 export function CommandMeta<T extends Ctor<{}>>(version: string, name?: string): (ctor: T) => T;
 
 // @beta (undocumented)
@@ -27,7 +27,7 @@ export interface OptionConfig {
     };
 }
 
-// @beta (undocumented)
+// @beta
 export function OptionMeta(config: OptionConfig): (proto: any, key: string, descriptor?: PropertyDescriptor | undefined) => void;
 
 // @beta

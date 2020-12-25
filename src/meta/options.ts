@@ -72,7 +72,7 @@ export interface OptionConfig {
   required?: boolean;
   /**
    * The preceseing opton args' function.
-   * see (https://github.com/tj/commander.js#custom-option-processing)[Custom option processing]
+   * see (https://github.com/tj/commander.js#custom-option-processing)
    *
    * @remarks
    * If the {@link OptionMeta | \@OptionMeta} is used on a method. That method will be the processing
@@ -100,10 +100,21 @@ export interface OptionConfig {
 }
 
 /**
+ * Meta option decorator used to configure option command. This can be put on
+ * filed or class methods.
+ * If put on class methods this one will be used as the option processor.
+ *
+ * @remarks
+ *  -When used on class method `this` will no longer refer to the instance.
+ *  -When used on class fields the name fileds will be used as the short or long name, if those
+ *   are not specified inside the configuration object.
+ *   If  the field is of array type  then is the option accept and argumente this
+ *   will be default vardiac.
+ *
+ * @param config - Configuration object {@link OptionConfig}
  * @beta
  */
 export function OptionMeta(config: OptionConfig) {
-  //TODO prepare commander options instance
   return function (proto: any, key: string, descriptor?: PropertyDescriptor) {
     const optC = __internal__.OptionCommanderComposer.from(config);
     if (descriptor === undefined){
