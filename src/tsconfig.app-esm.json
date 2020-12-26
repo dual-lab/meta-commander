@@ -15,5 +15,9 @@
   },
   "include": [
     "./**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*_test.ts",
+    "src/test/**/*.ts"
   ]
 }

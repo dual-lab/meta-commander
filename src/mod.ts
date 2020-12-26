@@ -46,7 +46,6 @@ export {Ctor} from "./util/types";
  * @beta
  */
 export function program<T>(metaIstance: Ctor<T>): Command {
-  {new metaIstance();}
   return __internal__.getCommandMetaOnce(metaIstance.prototype);
 }
 
