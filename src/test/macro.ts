@@ -57,7 +57,7 @@ export const subcommandHidden: Macro<[Array<(cb: () => void, d?: boolean, h?: bo
   configs.forEach((fn, idx) => {
     const cli = program(fn(() => {}, false, true));
     
-
-    t.assert(false, 'Sub command is not hidden from help message')
+    const helpMex = cli.helpInformation();
+    t.assert(helpMex.includes('subcommand1') === false, 'Sub command is not hidden from help message')
   });
 }
