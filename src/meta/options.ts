@@ -120,7 +120,8 @@ export function OptionMeta(config: OptionConfig) {
     if (descriptor === undefined){
       // infer config from filed metadata
       optC.inferFromField(__internal__.getMetaType(proto, key), key);
-    } else if(__internal__.getMetaType(proto, key) === Function) {
+    } else if(__internal__.getMetaType(proto, key) === Function && descriptor &&
+      descriptor.get === undefined && descriptor.set === undefined) {
       // thake the method as the option processor function
       optC.inferFromMethod(descriptor.value);
     } else {
