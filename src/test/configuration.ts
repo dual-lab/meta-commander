@@ -1,5 +1,5 @@
 import {OptionMeta} from "../meta/options";
-import {CommandMeta} from "../meta/command";
+import {ActionHandler, CommandMeta, SubCommandMeta} from "../meta/command";
 
 export function myCliWithOptionMetaOnAccessor() {
   @CommandMeta<any>({
@@ -28,7 +28,7 @@ export function myCliWithOptionMetaOnMethod() {
         defaultValue: 0
       }
     })
-    verbosity(value: unknown, prev: number): number{
+    verbosity(value: unknown, prev: number): number {
       return prev + 1;
     }
   }
@@ -49,7 +49,7 @@ export function myCliWithOptionWithoutLongAndShortName() {
         defaultValue: 0
       }
     })
-    verbosity(value: unknown, prev: number): number{
+    verbosity(value: unknown, prev: number): number {
       return prev + 1;
     }
   }
@@ -83,4 +83,52 @@ export function myCliWithVardiacOption() {
   }
 
   return MyCliWithVardiacOption;
+}
+
+
+export function myCliWithVersionAndName(name: string, version: string) {
+  @CommandMeta({
+    name, version
+  })
+  class MyCliWithVersionAndName {
+
+  }
+
+  return MyCliWithVersionAndName;
+}
+
+export function myCliWithSubCommandMetaOnMethods() {
+  @CommandMeta<any>({
+    version: '0.0.0'
+  })
+  class MyCliWithSubCommandMetaOnMethod {
+
+    @SubCommandMeta()
+    incorrectSubcommandMeta(): number {
+      return 0;
+    }
+  }
+  return MyCliWithSubCommandMetaOnMethod;
+}
+
+export function myCliWithSubCommandMeta(cb = () => {}, isDefault?: boolean, hidden?: boolean) {
+
+  @CommandMeta<any>({
+    name: 'subcommand1'
+  })
+  class SubCommand1 {
+    @ActionHandler
+    action() {
+      cb();
+    }
+  }
+  @CommandMeta<any>({
+    version: '0.0.0'
+  })
+  class MyCliWithSubCommandMeta {
+
+    @SubCommandMeta(isDefault, hidden)
+    subcommand1: SubCommand1;
+  }
+  return MyCliWithSubCommandMeta;
 }
