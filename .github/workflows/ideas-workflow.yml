@@ -1,0 +1,57 @@
+# Yaml file tha define github action from meta-commander
+
+name: meta-commander/ideas
+
+on:
+  push:
+    branches:
+      - "ideas/main"
+  pull_request:
+    types: [opened]
+    branches:
+      - "main"
+
+jobs:
+  make:
+    name: Make build and test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+        node: [14.x]
+
+    steps:
+      # Setup node js
+      - name: Setup node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+          scope: "@dual-lab"
+      # chekout step
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # setup yarn cache
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # Install dep step
+      - name: Install node dependecies
+        run: yarn install --frozen-lockfile
+      # Build step
+      - name: Make build
+        run: yarn run build
+      - name: Make build esm
+        run: yarn run build:esm
+      # Test step
+      - name: Make test
+        run: yarn run test
+      # Test api
+      - name: Make api test
+        run: yarn run api-extractor
