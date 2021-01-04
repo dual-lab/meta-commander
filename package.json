@@ -22,7 +22,7 @@
     "test": "ava",
     "test:watch": "ava --watch",
     "changelog": "standard-changelog",
-    "api-extractor": "api-extractor",
+    "api-extractor": "api-extractor run",
     "api-extractor:local": "api-extractor run --local --verbose",
     "api-extractor:docs": "api-documenter markdown --input-folder temp --output-folder docs"
   },
@@ -45,5 +45,8 @@
   },
   "dependencies": {
     "commander": "^6.2.0"
+  },
+  "peerDependencies": {
+    "reflect-metadata": "^0.1.13"
   }
 }
