@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ES2015",
+    "outDir": "../dist/esm",
+    "rootDir": ".",
+    "baseUrl": "",
+    "rootDirs": [
+      "."
+    ],
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "./**/*_test.ts",
+    "./test/**/*.ts"
+  ]
+}

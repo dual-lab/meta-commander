@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+// Extract the proposal  to run
+process.argv.splice(0, 2);
+const proposal = process.argv.shift();
+
+(async () => {
+  try {
+    // instal typescript on the fly compiler
+    require('../../lib/tsst-register');
+    require(`../${proposal}.ts`);
+    process.exitCode = 0;
+  } catch (err) {
+    process.stderr.write(`+ FATAL + <> command ${proposal} failed: ${err.message}\n`);
+    process.exitCode = 1;
+  }
+})();

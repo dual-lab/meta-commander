@@ -1,0 +1,113 @@
+# Yaml file tha define github action from meta-commander
+
+name: meta-commander/ideas
+
+on:
+  push:
+    tags:
+      - "v*"
+    paths:
+      - "package.json"
+
+jobs:
+  make:
+    name: Make build and test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+        node: [14.x]
+
+    steps:
+      # Setup node js
+      - name: Setup node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+          scope: "@dual-lab"
+      # chekout step
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # setup yarn cache
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # Install dep step
+      - name: Install node dependecies
+        run: yarn install --frozen-lockfile
+      # Build step
+      - name: Make build
+        run: yarn run build
+      - name: Make build esm
+        run: yarn run build:esm
+      # Test step
+      - name: Make test
+        run: yarn run test
+      # Test api
+      - name: Make api test
+        run: yarn run api-extractor
+      # Pack the release
+      - name: Make pack
+        id: yarn-pack
+        run: yarn pack --out dist/%s-%v.tgz
+          echo "::set-output name=packname::$(basename dist/*.tgz)"
+      # upload artifact
+      - name: Save generated artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: meta-commander-pack
+          path: dist/${{ steps.yarn-pack.outputs.packname }}
+          if-no-files-found: error
+
+  make_release:
+    name: Create a github release
+    needs: [make]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+        node: [14.x]
+    steps:
+      - name: Download generated artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: meta-commander-pack
+      - name: Get pack name
+        id: get-pack-name
+        run: echo "::set-output name=packname::$(basename meta-commander-pack/*.tgz)"
+      - name: Create release tags
+        id: create-release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: true
+      - name: Upload assets
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path: ./meta-commander-pack/${{ steps.get-pack-name.outputs.packname }}
+          asset_content_type: application/gzip
+          asset_name: ${{ steps.get-pack-name.outputs.packname }}
+      - name: Setup node ${{ matrix.node }} with npm repository
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+          scope: "@dual-lab"
+          registry-url: "https://registry.npmjs.org"
+      - name: Publish to npm
+        run: npm publish ./meta-commander-pack/${{ steps.get-pack-name.outputs.packname }} --tag beta --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_DUALAB_TOKEN }}

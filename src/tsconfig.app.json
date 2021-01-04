@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../dist/cjs",
+    "rootDir": ".",
+    "baseUrl": "",
+    "rootDirs": [
+      "."
+    ],
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "./**/*_test.ts",
+    "./test/**/*.ts"
+  ]
+}
