@@ -1,6 +1,6 @@
 # Yaml file tha define github action from meta-commander
 
-name: meta-commander/ideas
+name: meta-commander/main
 
 on:
   push:
