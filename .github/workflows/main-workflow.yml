@@ -41,7 +41,7 @@ jobs:
             ${{ runner.os }}-yarn-
       # Install dep step
       - name: Install node dependecies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       # Build step
       - name: Make build
         run: yarn run build

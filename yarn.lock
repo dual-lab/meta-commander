@@ -96,6 +96,8 @@ __metadata:
     reflect-metadata: ^0.1.13
     standard-changelog: ^2.0.27
     typescript: ^4.1.3
+  peerDependencies:
+    reflect-metadata: ^0.1.13
   languageName: unknown
   linkType: soft
 
