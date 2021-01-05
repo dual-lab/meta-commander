@@ -56,7 +56,8 @@ jobs:
       # Pack the release
       - name: Make pack
         id: yarn-pack
-        run: yarn pack --out dist/%s-%v.tgz
+        run: |
+          yarn pack --out dist/%s-%v.tgz
           echo "::set-output name=packname::$(basename dist/*.tgz)"
       # upload artifact
       - name: Save generated artifact
