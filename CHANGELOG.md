@@ -1,3 +1,7 @@
+# [1.0.0-beta.1](https://github.com/dual-lab/meta-commander/compare/v1.0.0-beta...v1.0.0-beta.1) (2021-01-05)
+
+
+
 # 1.0.0-beta (2021-01-05)
 
 
