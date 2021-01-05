@@ -2,7 +2,7 @@
 
 Github action release| Github action wrap-up
 :---: | :---: |
-![Rel]()| ![ideas/main]()|
+![meta-commander/main](https://github.com/dual-lab/meta-commander/workflows/meta-commander/main/badge.svg) | ![meta-commander/ideas](https://github.com/dual-lab/meta-commander/workflows/meta-commander/ideas/badge.svg)|
 
 ## About this Repo
 
